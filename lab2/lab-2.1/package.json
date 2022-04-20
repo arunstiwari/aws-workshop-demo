@@ -1,0 +1,20 @@
+{
+  "name": "lab-2.1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hello.js",
+  "scripts": {
+    "test": "run-local-lambda --file hello.js --event tests/event.json",
+    "deploy": "aws lambda update-function-code --function-name arn:aws:lambda:ap-south-1:844154758539:function:hello_world --zip-file fileb://hello_world_lambda.zip",
+    "predeploy": "zip -r hello_world_lambda.zip * -x *.zip *.json *.log"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1116.0"
+  },
+  "devDependencies": {
+    "run-local-lambda": "^1.1.1"
+  }
+}
